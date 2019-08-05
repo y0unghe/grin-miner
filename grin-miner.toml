@@ -76,10 +76,10 @@ stratum_server_tls_enabled = false
 
 # The fastest cpu algorithm, but consumes the most memory
 
-# [[mining.miner_plugin_config]]
-# plugin_name = "cuckarood_cpu_compat_29"
-# [mining.miner_plugin_config.parameters]
-# nthreads = 4
+[[mining.miner_plugin_config]]
+plugin_name = "cuckarood_cpu_compat_29"
+[mining.miner_plugin_config.parameters]
+nthreads = 4
 
 # As above, but for processors supporting avx2
 
@@ -95,7 +95,7 @@ stratum_server_tls_enabled = false
 #   (nvcc should be in your PATH)
 #   Wrong gcc? install gcc-5 g++-5; export CC=`which gcc-5`; # then build
 #2) Ensure the 'build-cuda-plugin' feature is included in Cargo.toml, e.g:
-cuckoo_miner = { path = "./cuckoo-miner", features = ["build-cuda-plugins"]}
+#   cuckoo_miner = { path = "./cuckoo-miner", features = ["build-cuda-plugins"]}
 #
 # Parameters can be set individually for each device by using multiple
 # instance of each plugin.  device 0 is used by default
@@ -103,18 +103,18 @@ cuckoo_miner = { path = "./cuckoo-miner", features = ["build-cuda-plugins"]}
 
 # currently requires 5.5GB+ GPU memory
 #[[mining.miner_plugin_config]]
-# plugin_name = "cuckarood_cuda_29"
+#plugin_name = "cuckarood_cuda_29"
 #[mining.miner_plugin_config.parameters]
-# device = 0
-# cpuload = 1
-# ntrims = 176
-# genablocks = 4096
-# genatpb = 128
-# genbtpb = 128
-# trimtpb = 512
-# tailtpb = 1024
-# recoverblocks = 1024
-# recovertpb = 1024
+#device = 0
+#cpuload = 1
+#ntrims = 176
+#genablocks = 4096
+#genatpb = 128
+#genbtpb = 128
+#trimtpb = 512
+#tailtpb = 1024
+#recoverblocks = 1024
+#recovertpb = 1024
 
 # e.g. To enable multiple devices (copy params from above as needed)
 
@@ -175,19 +175,19 @@ cuckoo_miner = { path = "./cuckoo-miner", features = ["build-cuda-plugins"]}
 #off the same card while trying to mine with an 11GB card
 
 #[[mining.miner_plugin_config]]
-plugin_name = "cuckatoo_mean_cuda_rtx_31"
+#plugin_name = "cuckatoo_mean_cuda_rtx_31"
 #[mining.miner_plugin_config.parameters]
-device = 0
-expand = 3
-cpuload = 1
-ntrims = 176
-genablocks = 4096
-genatpb = 128
-genbtpb = 128
-trimtpb = 512
-tailtpb = 1024
-recoverblocks = 1024
-recovertpb = 1024
+#device = 0
+#expand = 3
+#cpuload = 1
+#ntrims = 176
+#genablocks = 4096
+#genatpb = 128
+#genbtpb = 128
+#trimtpb = 512
+#tailtpb = 1024
+#recoverblocks = 1024
+#recovertpb = 1024
 
 #lean cuda
 #[[mining.miner_plugin_config]]
@@ -217,4 +217,3 @@ recovertpb = 1024
 # ID withing the platform
 #device = 0
 #edge_bits = 31
-
