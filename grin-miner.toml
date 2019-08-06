@@ -37,7 +37,7 @@ log_file_append = true
 [mining]
 
 # whether to run the tui
-run_tui = true
+run_tui = false
 
 # listening grin stratum server url
 stratum_server_addr = "127.0.0.1:3416"
@@ -76,10 +76,10 @@ stratum_server_tls_enabled = false
 
 # The fastest cpu algorithm, but consumes the most memory
 
-[[mining.miner_plugin_config]]
-plugin_name = "cuckarood_cpu_compat_29"
-[mining.miner_plugin_config.parameters]
-nthreads = 4
+# [[mining.miner_plugin_config]]
+# plugin_name = "cuckarood_cpu_compat_29"
+# [mining.miner_plugin_config.parameters]
+# nthreads = 4
 
 # As above, but for processors supporting avx2
 
@@ -154,20 +154,20 @@ nthreads = 4
 #memory requirements are tight, don't drive a display
 #off the same card while trying to mine with an 11GB card
 
-#[[mining.miner_plugin_config]]
-#plugin_name = "cuckatoo_mean_cuda_gtx_31"
-#[mining.miner_plugin_config.parameters]
-#device = 0
-#expand = 3
-#cpuload = 1
-#ntrims = 176
-#genablocks = 4096
-#genatpb = 128
-#genbtpb = 128
-#trimtpb = 512
-#tailtpb = 1024
-#recoverblocks = 1024
-#recovertpb = 1024
+[[mining.miner_plugin_config]]
+plugin_name = "cuckatoo_mean_cuda_gtx_31"
+[mining.miner_plugin_config.parameters]
+device = 0
+expand = 3
+cpuload = 1
+ntrims = 176
+genablocks = 4096
+genatpb = 128
+genbtpb = 128
+trimtpb = 512
+tailtpb = 1024
+recoverblocks = 1024
+recovertpb = 1024
 
 #mean cuda optimised to use slightly less memory,
 #will work on a 2080TI with expand rounds set to 2
